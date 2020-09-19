@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Welcome to Hotel Website</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+  <script src="https://kit.fontawesome.com/3124ef8288.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <header>
+
+    <nav id="navbar">
+      <div class="container">
+        <h1 class="logo"><a href="index.html">HBT</a></h1>
+        <ul>
+          <li><a class="current" href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+              <input type="checkbox" id="checkbox"/>
+              <div class="slider round"></div>
+            </label>
+          </div>
+
+          <script>
+            const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+            const currentTheme = localStorage.getItem('theme');
+
+            if (currentTheme) {
+              document.documentElement.setAttribute('data-theme', currentTheme);
+
+              if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+              }
+            }
+
+            function switchTheme(e) {
+              if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+              } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+              }
+            }
+
+            toggleSwitch.addEventListener('change', switchTheme, false);
+          </script>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div id="showcase">
+      <div class="container">
+        <div class="showcase-content">
+          <h1><span class="text-primary">Enjoy</span> Your Stay</h1>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <a class="btn" href="about.html">About Our Hotel</a>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <section id="home-info" class="bg-dark">
+    <!-- image -->
+    <div class="info-img"></div>
+    <!-- content -->
+    <div class="info-content">
+      <h2><span class="text-primary">The History</span> Of Our Hotel</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <a class="btn btn-light" href="about.html">Read More</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="box bg-light">
+      <i class="fas fa-hotel fa-3x"></i>
+      <h3>Great Location</h3>
+      <p>This is some text, made by Kiran</p>
+    </div>
+    <div class="box bg-primary">
+      <i class="fas fa-utensils fa-3x"></i>
+      <h3>Free Meals</h3>
+      <p>This is some text, made by Kiran</p>
+    </div>
+    <div class="box bg-light">
+      <i class="fas fa-dumbbell fa-3x"></i>
+      <h3>Fitness Room</h3>
+      <p>This is some text, made by Kiran</p>
+    </div>
+  </section>
+
+  <div class="clr">
+
+  </div>
+
+  <footer id="main-footer">
+    <p>Hotel BT &copy; 2019, All Rights Reserved</p>
+  </footer>
+
+
+</body>
+
+</html>
